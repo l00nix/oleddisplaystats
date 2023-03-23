@@ -103,5 +103,4 @@ while True:
     time.sleep(0.1)
 
     counter += 1  # Increment the counter
-
 ```
