@@ -1,5 +1,8 @@
 # OLED Display Stats
-Cross platform python3 script to display system statistics on a i2c based OLED displays
+
+## Overview
+
+oleddisplaystats is a cross platform python3 script to display system statistics on a i2c based OLED displays. It currently is tested to run on Raspberry Pi 4, Raspberry Pi Compute Module 4, Banana Pi BPI-CM4 computer module and the UP Board UP 4000.
 
 ```python
 #!/usr/bin/python3
@@ -34,8 +37,10 @@ class CustomI2C:
 
     def unlock(self):
         pass
-
+#This is the i2c bus number the OLED is connected to - it can be retrieved via iscdetect -y -r [x] where x is the bus
 bus_number = 1
+
+# This is the pixel hight and width of the OLED display
 width = 128
 height = 32
 
