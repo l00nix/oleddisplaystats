@@ -1,8 +1,14 @@
+---
+title: null
+---
+
 # OLED Display Stats
 
 ## Overview
 
-oleddisplaystats is a cross platform python3 script to display system statistics on a i2c based OLED displays. It currently is tested to run on Raspberry Pi 4, Raspberry Pi Compute Module 4, Banana Pi BPI-CM4 computer module and the UP Board UP 4000.
+oleddisplaystats is a cross platform python3 script to display system statistics on an i2c based OLED displays. It currently is tested to run on Raspberry Pi 4, Raspberry Pi Compute Module 4, Banana Pi BPI-CM4 computer module and the UP Board UP 4000.
+
+![OLED Diplay stats running on Banana Pi BPI-CM4 computer module](docs/assets/images/oled.gif)
 
 ```python
 #!/usr/bin/python3
@@ -37,7 +43,7 @@ class CustomI2C:
 
     def unlock(self):
         pass
-#This is the i2c bus number the OLED is connected to - it can be retrieved via iscdetect -y -r [x] where x is the bus
+#This is the i2c bus number the OLED is connected to - it can be retrieved via i2cdetect -y -r [x] where x is the bus
 bus_number = 1
 
 # This is the pixel hight and width of the OLED display
@@ -49,7 +55,9 @@ i2c = CustomI2C(bus_number)
 
 # Create an SSD1306 OLED class instance with a 128x32 display
 disp = adafruit_ssd1306.SSD1306_I2C(width, height, i2c)
-#disp.rotation =2
+
+#Display rotation - should be a value of 0, 1, 2 or 3 only, where 0 is no rotation (default), 1 is rotate 90° clockwise, 2 is 180° rotation and 3 represents 270° rotation.
+#disp.rotation = 2
 
 # Clear the display
 disp.fill(0)
