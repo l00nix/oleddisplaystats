@@ -1,10 +1,13 @@
-# OLED Display Stats
-
 ## Overview
 
-oleddisplaystats is a cross platform python3 script to display system statistics on an i2c based OLED displays. It currently is tested to run on Raspberry Pi 4, Raspberry Pi Compute Module 4, Banana Pi BPI-CM4 computer module and the UP Board UP 4000.
+oleddisplaystats is a cross platform python3 script to display system statistics on an i2c based OLED displays. It currently is tested to run on [Raspberry Pi 4 B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target="blank"}, [Raspberry Pi Compute Module 4](https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000){:target="blank"}, [Banana Pi BPI-CM4 computer module](https://wiki.banana-pi.org/Banana_Pi_BPI-CM4){:target="blank"} and the [UP Board UP 4000](https://up-board.org/up-4000/){:target="blank"}.
 
-![OLED Diplay stats running on Banana Pi BPI-CM4 computer module](docs/assets/images/oled.gif)
+![OLED Diplay stats running on a Banana Pi BPI-CM4 computer module](docs/assets/images/oled.gif)<br/>
+**oleddisplaystats script running on a BananaPi BPI-CM4 computer module**
+
+![OLED Diplay stats running on an Up Board UP4000](docs/assets/images/up4000.jpg){:width="60%"}<br/>
+**oleddisplaystats script running on an Up Board UP4000**
+
 
 ```python
 #!/usr/bin/python3
