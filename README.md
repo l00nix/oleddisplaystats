@@ -1,7 +1,3 @@
----
-title: null
----
-
 # OLED Display Stats
 
 ## Overview
