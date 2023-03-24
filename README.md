@@ -5,7 +5,7 @@ oleddisplaystats is a cross platform python3 script to display system statistics
 ![OLED Diplay stats running on a Banana Pi BPI-CM4 computer module](docs/assets/images/oled.gif)<br/>
 **oleddisplaystats script running on a BananaPi BPI-CM4 computer module**
 
-![OLED Diplay stats running on an Up Board UP4000](docs/assets/images/up4000.jpg){:width="60%"}<br/>
+![OLED Diplay stats running on an Up Board UP4000](docs/assets/images/up4000.gif){:width="60%"}<br/>
 **oleddisplaystats script running on an Up Board UP4000**
 
 
