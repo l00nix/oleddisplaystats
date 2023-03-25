@@ -117,6 +117,4 @@ while True:
     counter += 1  # Increment the counter
 ```
 
-{% raw %}
-{% include advertisements.html %}
-{% endraw %}
+<!-- {% include advertisements.html %} -->
