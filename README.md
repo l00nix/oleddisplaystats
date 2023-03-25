@@ -116,5 +116,3 @@ while True:
 
     counter += 1  # Increment the counter
 ```
-
-<!-- {% include advertisements.html %} -->
