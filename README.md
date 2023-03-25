@@ -1,3 +1,5 @@
+{% include advertisements.html %}
+
 ## Overview
 
 oleddisplaystats is a cross platform python3 script to display system statistics on an i2c based OLED displays. It currently is tested to run on [Raspberry Pi 4 B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target="blank"}, [Raspberry Pi Compute Module 4](https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000){:target="blank"}, [Banana Pi BPI-CM4 computer module](https://wiki.banana-pi.org/Banana_Pi_BPI-CM4){:target="blank"} and the [UP Board UP 4000](https://up-board.org/up-4000/){:target="blank"}.
@@ -116,14 +118,3 @@ while True:
 
     counter += 1  # Increment the counter
 ```
-
-
-This is a regular paragraph.
-
-<table>
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
-
-This is another regular paragraph.
