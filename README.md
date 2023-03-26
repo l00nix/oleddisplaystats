@@ -5,9 +5,45 @@ oleddisplaystats is a cross platform python3 script to display system statistics
 ![OLED Diplay stats running on a Banana Pi BPI-CM4 computer module](docs/assets/images/oled.gif)<br/>
 **oleddisplaystats script running on a BananaPi BPI-CM4 computer module**
 
-![OLED Diplay stats running on an Up Board UP4000](docs/assets/images/up4000.gif){:width="60%"}<br/>
+![OLED Diplay stats running on an Up Board UP4000](docs/assets/images/up4000.gif)<br/>
 **oleddisplaystats script running on an Up Board UP4000**
 
+## Description
+
+A while back I created a DEB installation package to automate the install of a python3 script to display ststem statistics on a 132x64 OLED display on a Raspberry Pi - (displaypistats)[https://displaypistats.loonix.ca].
+
+In the meantime I started to play around with the [Banana Pi BPI-CM4 computer module](https://wiki.banana-pi.org/Banana_Pi_BPI-CM4)and the [UP Board UP 4000](https://up-board.org/up-4000/).
+
+Although the BPI-CM4 is compatible with the Raspberry Pi Compute Module 4, the way I2C is enabled differs from the Raspberry Pi so I the installation via the DEB package I created did not work on the BPI-CM4. The UP4000 is Intel based and the package did not work either.
+
+I set out to rewrite the script to be compatible with all the boards I was playing around with. THe biggest challenge was to find the right pyhon pip module to control the i2c OLED with.
+
+The original script used the board and busio modules which were not compatible with the BPI-CM4 and UP4000. After a long search I found the smbus2 library which seemed to work on the Raspberry Pi, UP4000 and BPI-CM4.
+
+I had to create a custom i2c class to be fully compatible with the old python code I had put together.
+
+## Enhancements
+
+My orignal script, similar to the (one)[https://bit.ly/3rjHarP] I modified it from was a static script displaying the following:
+
+- IP address on line one of the OLED
+- CPU load on line three of the OLED
+- Memroy usage and total memory of the device on line three of the OLED
+- Disk usage and total disk space of the device on line four of the OLED
+
+I always wanted to also display the hostname on the display but the deisplay is small and limited to the amount of data that can be displayed.
+
+So I was thinking if I could alternate displaying the IP address and the hostname on line one of the OLED I could increase the system information being displayed on the OLED.  
+
+## Installation
+
+1. Copy the script below to a folder on your device; for example /usr/local/etc/
+2. add '/usr/bin/python3 /usr/local/etc/oleddisplaystats &' to rc.local
+
+Maybe someday when I have time I will come up with a multi-platform DEB installation package.
+
+
+## The python script that displays the stats on the OLED
 
 ```python
 #!/usr/bin/python3

@@ -63,8 +63,48 @@
 <p><img src="docs/assets/images/oled.gif" alt="OLED Diplay stats running on a Banana Pi BPI-CM4 computer module" /><br />
 <strong>oleddisplaystats script running on a BananaPi BPI-CM4 computer module</strong></p>
 
-<p><img src="docs/assets/images/up4000.gif" alt="OLED Diplay stats running on an Up Board UP4000" width="60%" /><br />
+<p><img src="docs/assets/images/up4000.gif" alt="OLED Diplay stats running on an Up Board UP4000" /><br />
 <strong>oleddisplaystats script running on an Up Board UP4000</strong></p>
+
+<h2 id="description">Description</h2>
+
+<p>A while back I created a DEB installation package to automate the install of a python3 script to display ststem statistics on a 132x64 OLED display on a Raspberry Pi - (displaypistats)[https://displaypistats.loonix.ca].</p>
+
+<p>In the meantime I started to play around with the <a href="https://wiki.banana-pi.org/Banana_Pi_BPI-CM4">Banana Pi BPI-CM4 computer module</a>and the <a href="https://up-board.org/up-4000/">UP Board UP 4000</a>.</p>
+
+<p>Although the BPI-CM4 is compatible with the Raspberry Pi Compute Module 4, the way I2C is enabled differs from the Raspberry Pi so I the installation via the DEB package I created did not work on the BPI-CM4. The UP4000 is Intel based and the package did not work either.</p>
+
+<p>I set out to rewrite the script to be compatible with all the boards I was playing around with. THe biggest challenge was to find the right pyhon pip module to control the i2c OLED with.</p>
+
+<p>The original script used the board and busio modules which were not compatible with the BPI-CM4 and UP4000. After a long search I found the smbus2 library which seemed to work on the Raspberry Pi, UP4000 and BPI-CM4.</p>
+
+<p>I had to create a custom i2c class to be fully compatible with the old python code I had put together.</p>
+
+<h2 id="enhancements">Enhancements</h2>
+
+<p>My orignal script, similar to the (one)[https://bit.ly/3rjHarP] I modified it from was a static script displaying the following:</p>
+
+<ul>
+  <li>IP address on line one of the OLED</li>
+  <li>CPU load on line three of the OLED</li>
+  <li>Memroy usage and total memory of the device on line three of the OLED</li>
+  <li>Disk usage and total disk space of the device on line four of the OLED</li>
+</ul>
+
+<p>I always wanted to also display the hostname on the display but the deisplay is small and limited to the amount of data that can be displayed.</p>
+
+<p>So I was thinking if I could alternate displaying the IP address and the hostname on line one of the OLED I could increase the system information being displayed on the OLED.</p>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>Copy the script below to a folder on your device; for example /usr/local/etc/</li>
+  <li>add ‘/usr/bin/python3 /usr/local/etc/oleddisplaystats &amp;’ to rc.local</li>
+</ol>
+
+<p>Maybe someday when I have time I will come up with a multi-platform DEB installation package.</p>
+
+<h2 id="the-python-script-that-displays-the-stats-on-the-oled">The python script that displays the stats on the OLED</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python3
 </span><span class="kn">import</span> <span class="nn">smbus2</span>
