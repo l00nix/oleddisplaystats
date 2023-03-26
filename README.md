@@ -10,7 +10,7 @@ oleddisplaystats is a cross platform python3 script to display system statistics
 
 ## Description
 
-A while back I created a DEB installation package to automate the install of a python3 script to display ststem statistics on a 132x64 OLED display on a Raspberry Pi - (displaypistats)[https://displaypistats.loonix.ca].
+A while back I created a DEB installation package to automate the install of a python3 script to display ststem statistics on a 132x64 OLED display on a Raspberry Pi - [displaypistats](https://displaypistats.loonix.ca).
 
 In the meantime I started to play around with the [Banana Pi BPI-CM4 computer module](https://wiki.banana-pi.org/Banana_Pi_BPI-CM4)and the [UP Board UP 4000](https://up-board.org/up-4000/).
 
@@ -24,7 +24,7 @@ I had to create a custom i2c class to be fully compatible with the old python co
 
 ## Enhancements
 
-My orignal script, similar to the (one)[https://bit.ly/3rjHarP] I modified it from was a static script displaying the following:
+My orignal script, similar to the [one](https://bit.ly/3rjHarP) I modified it from was a static script displaying the following:
 
 - IP address on line one of the OLED
 - CPU load on line three of the OLED
