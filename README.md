@@ -31,7 +31,7 @@ My orignal script, similar to the [one](https://bit.ly/3rjHarP) I modified it fr
 - Memroy usage and total memory of the device on line three of the OLED
 - Disk usage and total disk space of the device on line four of the OLED
 
-I always wanted to also display the hostname on the display but the deisplay is small and limited to the amount of data that can be displayed.
+I always wanted to also display the hostname on the display but the display is small and limited to the amount of data that can be displayed.
 
 So I was thinking if I could alternate displaying the IP address and the hostname on line one of the OLED I could increase the system information being displayed on the OLED.  
 
